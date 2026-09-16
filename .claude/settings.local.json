@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find . -name \"*.html\" -type f -exec grep -l \"FINUDGE\" {})"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

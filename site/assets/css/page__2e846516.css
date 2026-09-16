@@ -1,0 +1,46 @@
+.title {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #333;
+}
+
+.main-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #333;
+}
+
+.main-left h3 {
+    font-size: 38px;
+}
+
+.main-left p {
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 10px;
+}
+
+.main-left .img-box::before {
+    padding-top: 60%;
+}
+
+@media screen and (max-width:769px) {
+    .title {
+        max-width: 100%;
+        font-size: 30px;
+    }
+
+    .main-left h3 {
+        font-size: 28px;
+    }
+
+    .main-left p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+    <title>Exclusive Revelation: How Renesas Developed the World’s First 3nm High-Performance SoC?</title>
+    <meta name="description" content="As a leading global semiconductor solutions provider, Renesas Electronics recently unveiled its next-generation automotive system-on-chip (SoC) — the R-Car X5H.">
+    <meta name="keywords" content="3nm High-Performance SoC">
+    <link rel="stylesheet" type="text/css" href="/assets/css/braft-editor/index__2e846516.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/base__da64db95.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header__004405c3.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/content__004405c3.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/page__2e846516.css">
+    
+    
+    
+    
+   
+
+    
+    
+
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202609080101/gpt" rel="compression-dictionary"><meta http-equiv="origin-trial" content="AxjhRadLCARYRJawRjMjq4U8V8okQvSnrBIJWdMajuEkN3/DfVAcLcFhMVrUWnOXagwlI8dQD84FwJDGj9ohqAYAAABveyJvcmlnaW4iOiJodHRwczovL2dvb2dsZWFkc2VydmljZXMuY29tOjQ0MyIsImZlYXR1cmUiOiJGZXRjaExhdGVyQVBJIiwiZXhwaXJ5IjoxNzI1NDA3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+
+<body>
+    
+    <header>
+        <div class="center">
+            <button class="PE_Btn menu_open"><img src="/assets/images/menu_black.png"></button>
+            <h1 class="logo">
+                <a href="/">
+                    <img src="/assets/images/index/FINUDGE.png">
+                </a>
+            </h1>
+            <button class="PE_Btn search_open"><img src="/assets/images/search_black.png"></button>
+            <nav>
+                <button class="PE_Btn menu_close close_btn"><img src="/assets/images/guanbi_black.png"></button>
+                <ul>
+
+                    <li><a href="/">Must Know</a></li>
+                    <li><a href="/">Automotive Industry</a></li>
+                    <li><a href="/">Automotive World</a></li>
+                </ul>
+            </nav>
+            <form class="searchBar" action="#" onsubmit="return false">
+                <button class="PE_Btn search_close close_btn"><img src="/assets/images/guanbi_black.png"></button>
+                <input placeholder="Search." type="text" id="search">
+                <button type="submit" id="go"><img src="/assets/images/search_black.png"></button>
+            </form>
+        </div>
+    </header>
+     <div class="de_iv_adv">
+        <div style="text-align: center; color: gray;font-size: 13px; line-height: 1.5;">
+            advertisement
+        </div>
+       <div id="div-gpt-ad-1762256258317-0" style="min-width: 300px; min-height: 250px;" data-google-query-id="CMCk4vzo75YDFS0IZgQdSvEgow">
+            
+        <div id="google_ads_iframe_/21930596546,23106404809/IP_Tecentech_finudge.site_300x250_ROS_ATF2_Mobile_DFP_MC_0__container__" style="border: 0pt;"></div></div>
+    </div>
+    <div class="postionFixed">
+        <div id="div-gpt-ad-1762256516160-0" style="min-width: 320px; min-height: 50px;" data-google-query-id="CJ7r4fzo75YDFSmUYwYd8SEJ1A">
+            
+        <div id="google_ads_iframe_/21930596546,23106404809/IP_Tecentech_finudge.site_320x50_ROS_BTF2_Mobile_DFP_MC_0__container__" style="border: 0pt;"></div></div>
+    </div>
+    <div class="title">
+        Exclusive Revelation: How Renesas Developed the World’s First 3nm High-Performance SoC?
+    </div>
+    <div class="de_iv_adv">
+        <div style="text-align: center; color: gray;font-size: 13px; line-height: 1.5;">
+            advertisement
+        </div>
+       <div id="div-gpt-ad-1784804780180-0" style="min-width: 250px; min-height: 250px;" data-google-query-id="CMr55fzo75YDFf2XYwYd84MfGA">
+  
+<div id="google_ads_iframe_/21930596546,23106404809/IP_TECENTECH_finudge.site_300x250_ROS_ATF8_Mobile_DFP_MC_0__container__" style="border: 0pt;"></div></div>
+    </div>
+    <main class="center">
+        <div class="main-left">
+            <p></p>
+            <div class="media-wrap image-wrap align-center" style="text-align:center"><img class="lazy" src="/assets/images/pages/page8/kS6RlE1LcTx9u7IUZbUWhc6OrtGEV9vC.jpg" data-src="/assets/images/pages/page8/kS6RlE1LcTx9u7IUZbUWhc6OrtGEV9vC.jpg"></div>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">As a leading global semiconductor solutions provider, Renesas Electronics recently unveiled its next-generation automotive system-on-chip (SoC) — the R-Car X5H. This chip is built on a 3nm automotive-grade process, delivering up to 400 TOPS of computing power. Designed for advanced driver assistance systems (ADAS), in-vehicle infotainment (IVI), and single-chip gateway applications, it accelerates the automotive industry’s transition to centralized electronic control unit (ECU) architectures.  </span></span>
+            </p>
+            <p></p>
+            <p><span style="line-height:1.5"><strong><span style="font-size:20px">Pioneering 3nm Process Technology: Breaking Through Performance and Power Bottlenecks  </span></strong>
+                </span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">The advancement of chip manufacturing processes directly impacts performance and power efficiency. Compared to existing 4nm SoCs (such as those from NVIDIA and Qualcomm) and 5nm automotive SoCs (such as those from Ambarella and Mobileye), Renesas X5H is the first to adopt a 3nm process, establishing a leading position in the global automotive SoC market.  </span></span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">With this cutting-edge process technology, the X5H achieves a significant leap in performance while reducing power consumption. Compared to 5nm nodes, the X5H lowers power consumption by 30%-35%, enhancing computing efficiency. This reduction not only helps minimize system heat dissipation and overall costs but also extends the range of electric vehicles (EVs).  </span></span>
+            </p>
+            <p></p>
+            <p><span style="line-height:1.5"><strong><span style="font-size:20px">Powerful AI Performance and Efficient Computing Architecture  </span></strong>
+                </span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">In terms of AI computing power, the R-Car X5H stands out with an impressive 400 TOPS, setting a new benchmark in the industry. The chip features Arm Cortex-A720AE cores, providing over 1,000K DMIPS of computational power, enabling it to efficiently handle complex autonomous driving tasks such as image recognition, path planning, and sensor data fusion. Additionally, the X5H is equipped with a 4TFLOPS GPU, optimized for image rendering and real-time video processing, delivering an outstanding visual experience for smart cockpits.  </span></span>
+            </p>
+            <p></p>
+            <p><span style="line-height:1.5"><strong><span style="font-size:20px">Flexible NPU and GPU Expansion Technology  </span></strong>
+                </span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">To accommodate future cross-platform system upgrades, the R-Car X5H utilizes Universal Chiplet Interconnect Express (UCle) technology, along with APIs that ensure interoperability with third-party chip components. This modular approach allows automakers to flexibly integrate various functionalities, optimizing hardware resource allocation efficiently.  </span></span>
+            </p>
+            <p></p>
+            <p><span style="line-height:1.5"><strong><span style="font-size:20px">Hardware-Level Security Isolation and QoS Management  </span></strong>
+                </span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">With the continuous development of autonomous driving and vehicle networking technologies, security remains a top priority. The R-Car X5H incorporates hardware-level Fault-Free Isolation (FFI) technology, ensuring physical separation between critical safety functions (such as brake-by-wire systems) and non-critical functions. Each safety domain has its own dedicated CPU core, memory, and interface, guaranteeing safe operation even in the event of hardware or software failures. Additionally, the chip is equipped with Quality of Service (QoS) management, dynamically allocating computing resources based on task priority.  </span></span>
+            </p>
+            <p></p>
+            <p><span style="line-height:1.5"><strong><span style="font-size:20px">Renesas’ Market Leadership  </span></strong>
+                </span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">Renesas Electronics is the only company that holds a leading position in both the global automotive SoC and MCU markets. With its 3nm process, exceptional computing power, flexible scalability, and robust security architecture, the R-Car X5H not only empowers future intelligent vehicles but also reinforces Renesas' core competitiveness in the automotive semiconductor sector.  </span></span>
+            </p>
+            <p></p>
+            <p><span style="font-size:18px"><span style="line-height:1.5">Looking ahead, as automotive electronic architectures continue to evolve, the Renesas R-Car X5H SoC is poised to become a key driver of the intelligent driving era, providing critical support for the global automotive industry's technological advancements.</span></span>
+            </p>
+            <p></p>
+        </div>
+        <div class="main-right">
+            <h2>Recommend:</h2>
+            <div class="big-box">
+                <a onclick="location.href='byds-2025-strategy-intelligent-driving-and-global-market-expansion.html'" class="four-box items">
+                    <div class="img-box">
+                        <img src="/assets/images/index/I5XIJQb1VggStyduwDpLWUwr6tfH47oY.jpg" class="lazy" data-src="/assets/images/index/I5XIJQb1VggStyduwDpLWUwr6tfH47oY.jpg">
+                    </div>
+                    <div class="four-text">
+                        <b class="limit_rows one">
+                                                    BYD’s 2025 Strategy
+                                                </b>
+                        <h3 class="limit_rows three">
+                            BYD’s 2025 Strategy: Intelligent Driving and Global Market Expansion
+                        </h3>
+                    </div>
+                </a>
+                <a onclick="location.href='subsidy-cancellation-and-the-return-of-gasoline-cars-trump-administration-adjusts-ev-policies-us-market-may-cool-down.html'" class="four-box items">
+                    <div class="img-box">
+                        <img src="/assets/images/index/irZmIzRc7TxBdM3btl5KPkaMY2Hz32NG.jpg" class="lazy" data-src="/assets/images/index/irZmIzRc7TxBdM3btl5KPkaMY2Hz32NG.jpg">
+                    </div>
+                    <div class="four-text">
+                        <b class="limit_rows one">
+                                                    Gasoline Cars Or Electric Vehicle
+                                                </b>
+                        <h3 class="limit_rows three">
+                            Subsidy Cancellation and the Return of Gasoline Cars: Trump Administration Adjusts EV Policies, U.S. Market May Cool Down
+                        </h3>
+                    </div>
+                </a>
+                <a onclick="location.href='the-rise-of-hybrid-vehicles-gaining-prominence-in-the-global-new-energy-vehicle-market.html'" class="four-box items">
+                    <div class="img-box">
+                        <img src="/assets/images/index/VdZLqo6WobGE3GCWM7DJAv798COCdlQz.png" class="lazy" data-src="/assets/images/index/VdZLqo6WobGE3GCWM7DJAv798COCdlQz.png">
+                    </div>
+                    <div class="four-text">
+                        <b class="limit_rows one">
+                                                    Hybrid Vehicles
+                                                </b>
+                        <h3 class="limit_rows three">
+                            The Rise of Hybrid Vehicles: Gaining Prominence in the Global New Energy Vehicle Market
+                        </h3>
+                    </div>
+                </a>
+                <a onclick="location.href='european-electric-vehicles-a-stalled-transition-or-temporary-slowdown.html'" class="four-box items">
+                    <div class="img-box">
+                        <img src="/assets/images/index/QTrCbsWzizge41yXqMiGbugseFPdZOPQ.jpg" class="lazy" data-src="/assets/images/index/QTrCbsWzizge41yXqMiGbugseFPdZOPQ.jpg">
+                    </div>
+                    <div class="four-text">
+                        <b class="limit_rows one">
+                                                    European Electric Vehicles
+                                                </b>
+                        <h3 class="limit_rows three">
+                            European Electric Vehicles: A Stalled Transition or Temporary Slowdown?
+                        </h3>
+                    </div>
+                </a>
+                <a onclick="location.href='the-controversy-of-overhyping-autonomous-driving-and-accident-responsibility-who-is-liable-when-an-accident-occurs-with-autonomous-driving-activated.html'" class="four-box items">
+                    <div class="img-box">
+                        <img src="/assets/images/index/qnrCHwyY5uJZeyWxGwMqJDcc5rVZn2nH.jpg" class="lazy" data-src="/assets/images/index/qnrCHwyY5uJZeyWxGwMqJDcc5rVZn2nH.jpg">
+                    </div>
+                    <div class="four-text">
+                        <b class="limit_rows one">
+                                                    Autonomous Driving
+                                                </b>
+                        <h3 class="limit_rows three">
+                            The Controversy of Overhyping "Autonomous Driving" and Accident Responsibility: Who Is Liable When an Accident Occurs with Autonomous Driving Activated?
+                        </h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>©2025 Auto News. All Rights Reserved</div>
+        <div class="about">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+        </div>
+    </footer>
+
+
+
+
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__uspapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__gppLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="google_ads_top_frame" id="google_ads_top_frame" style="display: none; position: fixed; left: -999px; top: -999px; width: 0px; height: 0px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body></html>
