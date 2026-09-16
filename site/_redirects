@@ -1,7 +1,5 @@
 # Cloudflare Pages Redirects Configuration
-
-# Article pages - ensure they work without .html extension
-/articles/:article  /articles/:article.html  200
+# Multi-Page Application (MPA) - Static HTML Files
 
 # Redirect old domain to new domain
 https://fynudge.com/*  https://finudge.site/:splat  301!
