@@ -7,7 +7,8 @@
       "Bash(echo \"  ✓ All links now use proper href=\"\"...\"\" attributes\")",
       "Bash(echo \"  <a onclick=\"\"location.href=''articles/jdm-vs-euro-tuning.html''\"\" class=\"\"three-box items\"\">\")",
       "Bash(echo \"  <a href=\"\"articles/jdm-vs-euro-tuning.html\"\" class=\"\"three-box items\"\">\")",
-      "Bash(cat _redirects)"
+      "Bash(cat _redirects)",
+      "Bash(do sed -i 's/©2025 Auto News\\. All Rights Reserved/©2025 Finudge. All Rights Reserved/g' \"$file\")"
     ],
     "deny": [],
     "ask": []

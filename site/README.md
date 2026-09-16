@@ -1,4 +1,4 @@
-# Auto News Blog
+# Finudge Blog
 
 A professional automotive news and blog website featuring the latest automotive industry news, electric vehicle updates, and autonomous driving developments.
 
@@ -82,4 +82,4 @@ npm run preview
 
 ## 📝 License
 
-All Rights Reserved © 2025 Auto News
+All Rights Reserved © 2025 Finudge
