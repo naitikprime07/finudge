@@ -1,0 +1,13 @@
+# Cloudflare Pages Redirects Configuration
+
+# Article pages - ensure they work without .html extension
+/articles/:article  /articles/:article.html  200
+
+# Redirect old domain to new domain
+https://fynudge.com/*  https://finudge.site/:splat  301!
+https://www.fynudge.com/*  https://finudge.site/:splat  301!
+http://fynudge.com/*  https://finudge.site/:splat  301!
+http://www.fynudge.com/*  https://finudge.site/:splat  301!
+
+# Ensure www redirects to non-www
+https://www.finudge.site/*  https://finudge.site/:splat  301!
